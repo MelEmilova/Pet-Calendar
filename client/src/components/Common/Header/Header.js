@@ -1,25 +1,27 @@
+import './Header.css';
+import { Link } from 'react-router-dom';
 
 function Header(props) {
   return (
     <header id="site-header">
-      <nav class="navbar">
-        <section class="navbar-dashboard">
-          <div class="first-bar">
-            <a href="#">Dashboard</a>
-            <a class="button" href="#">My Pets</a>
-            <a class="button" href="#">Add Pet</a>
+      <nav className="navbar">
+        <section className="navbar-dashboard">
+          <div className="first-bar">
+            <Link to="/" className="linkUrl">Dashboard</Link>
+            <Link className="button linkUrl" to="/my-pets">My Pets</Link>
+            <Link className="button linkUrl" to="/create">Add Pet</Link>
           </div>
-          <div class="second-bar">
+          <div className="second-bar">
             <ul>
-              <li>Welcome, {}!</li>
-              <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+              <li>Welcome, { }!</li>
+              <li><Link to="/logout" className="linkUrl"><i className="fas fa-sign-out-alt"></i> Logout</Link></li>
             </ul>
           </div>
         </section>
-        <section class="navbar-anonymous">
+        <section className="navbar-anonymous">
           <ul>
-            <li><a href="#"><i class="fas fa-user-plus"></i> Register</a></li>
-            <li><a href="#"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            <li><Link to="/register" className="linkUrl"><i className="fas fa-user-plus"></i> Register</Link></li>
+            <li><Link to="/login" className="linkUrl"><i className="fas fa-sign-in-alt"></i> Login</Link></li>
           </ul>
         </section>
       </nav>
